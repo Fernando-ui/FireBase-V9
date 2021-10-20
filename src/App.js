@@ -3,8 +3,8 @@ import { Home } from './components/Home';
 import { Logueo } from './components/Logueo';
 
 import firebaseApp from './credenciales';
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
-const auth = getAuth(firebaseApp)
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+const auth = getAuth(firebaseApp);
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
   return (
     <>
   {
-    (usuarioGlobal) ? <Home/> : <Logueo />
+    (usuarioGlobal) ? <Home correoUsuario={usuarioGlobal.email}/> : <Logueo />
   }
     </>
   );

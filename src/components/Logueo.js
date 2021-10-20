@@ -3,10 +3,16 @@ import React, { useState } from 'react';
 import { Stack, Container, Form, Button } from 'react-bootstrap';
 
 import firebaseApp from '../credenciales';
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
+import {getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signInWithRedirect,
+        GoogleAuthProvider,
+
+    } from 'firebase/auth'
 
 const auth = getAuth(firebaseApp);
-
+const googleProvider = new GoogleAuthProvider();
 
 export const Logueo = () => {
 
@@ -51,7 +57,7 @@ export const Logueo = () => {
                         </Button>
                     </Form.Group>
                     </Form>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" onClick={ ()=>signInWithRedirect(auth,googleProvider)}>
                             Acceder con Google
                         </Button>
                         <Button variant="primary" type="submit" onClick={()=> setEstaRegistrandose(!estaRegistrandose)}>
