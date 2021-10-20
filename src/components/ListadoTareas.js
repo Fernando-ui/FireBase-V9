@@ -40,7 +40,9 @@ export const ListadoTareas = ({arrayTareas, correoUsuario, setArrayTareas}) => {
                             <>
                           <Row>
                             <Col>{objetoTarea.description}</Col>
-                            <Col className="btn btn-primary btn-sm m-3">Ver Archivo</Col>
+                            <a href={objetoTarea.url}>
+                                <Col className="btn btn-primary btn-sm m-3">Ver Archivo</Col>
+                            </a>
                             <Col className="btn btn-primary btn-sm m-3" onClick={()=> eliminarTarea(objetoTarea.id)}>Eliminar Tarea</Col>
                           </Row>
                           <hr />
