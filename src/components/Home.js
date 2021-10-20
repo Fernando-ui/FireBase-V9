@@ -78,7 +78,12 @@ export const Home = ({correoUsuario}) => {
                 Cerrar Sesion
             </Button>
             <hr />
-            <AgregarTarea/>
+            <AgregarTarea
+                arrayTareas={arrayTareas}
+                setArrayTareas={ setArrayTareas } 
+                correoUsuario={ correoUsuario }
+
+            />
 
             {
                 arrayTareas &&
